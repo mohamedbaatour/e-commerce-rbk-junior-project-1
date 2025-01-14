@@ -15,10 +15,13 @@ const db = new Sequelize('cars-e-commerce', 'root', 'root', {
   }
 })
     
-    (async () => {
-  await db.sync({ alter: true });
-});
-    
+db.sync({ alter: true })
+  .then(() => {
+    console.log("phrase table created successfully!");
+  })
+  .catch((error) => {
+    console.error("Unable to create table : ", error);
+  });
 
 
 module.exports = db

@@ -5,8 +5,8 @@ const mustang = db.define(
   "Mustang",
   {
     image: {
-      type: DataTypes.BLOB,
-      allowNull: false,
+      type: DataTypes.STRING,
+      allowNull: true,
     },
     name: {
       type: DataTypes.STRING,
