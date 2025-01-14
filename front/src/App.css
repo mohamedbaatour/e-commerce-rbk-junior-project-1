@@ -1,0 +1,248 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+nav {
+  margin-top: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 500px;
+  background: rgba(26, 26, 26, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 70%;
+  height: 68px;
+  padding: 3px 35px;
+
+  transition: all 0.3s ease-in-out;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+main {
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  min-height: 100vh;
+  color: white;
+  background-color: black;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0;
+  flex-direction: column;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+body::-webkit-scrollbar-track {
+  background: #171717;
+  border-radius: 10px;
+}
+body::-webkit-scrollbar-thumb {
+  background: rgba(134, 134, 134, 0.5);
+  border-radius: 10px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+::selection {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.logo {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 50px;
+  margin-left: 30px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 70px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #bbb;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #fff;
+}
+
+.search-input-nav {
+  background-color: #424242;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-top: 0.5px solid #808080;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.search-input-nav:hover {
+  background-color: #595959;
+  padding: 10px 30px;
+}
+.sign-in a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #fff;
+  font-size: 0.95rem;
+  transition: 0.3s;
+}
+
+.sign-in a:hover {
+  opacity: 0.8;
+}
+
+.goCart {
+  margin-left: -150px;
+  border: none;
+  background-color: #373737;
+  padding: 10px 20px;
+  font-weight: 600;
+  color: white;
+  border-radius: 50px;
+}
+
+.h1 {
+  display: flex;
+  flex-direction: column;
+  margin-top: 140px;
+  max-width: 800px;
+  font-size: 48px;
+  font-weight: 600;
+  letter-spacing: -1.3px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.h1-p {
+  margin-top: 10px;
+  color: gray;
+}
+
+.fords {
+  width: 100%;
+  margin-left: 80px;
+  display: flex;
+  margin-top: 60px;
+  align-items: start;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.card {
+  max-width: 300px;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 7px;
+  background-color: rgb(23, 23, 23);
+  padding: 15px;
+  margin-top: 40px;
+  border: none;
+  border-top: 0.8px rgb(44, 44, 44) solid;
+  border-left: 0.5px rgb(34, 34, 34) solid;
+  transition: 0.4s;
+  margin-bottom: 40px;
+}
+
+.card:hover {
+  scale: 1.04;
+}
+
+.search {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.search-input {
+  background-color: #424242;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-top: 0.5px solid #808080;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 30px;
+}
+
+.search-input:hover {
+  background-color: #595959;
+  padding: 10px 30px;
+}
+
+.search-icon {
+  margin-top: -35px;
+  margin-left: -40px;
+}
+
+.card-image {
+  max-width: 240px;
+}
+
+.card-name {
+  margin-top: 8px;
+  font-size: 18px;
+}
+
+.card-description {
+  color: gray;
+  margin-top: 16px;
+}
+
+.card-delete {
+  margin-top: 10px;
+  padding: 5px 15px;
+  border: none;
+  font-size: 15px;
+  font-weight: 500;
+  background-color: rgb(53, 53, 53);
+  border-top: 0.1px rgb(112, 112, 112) solid;
+  color: white;
+  border-radius: 100px;
+  cursor: pointer;
+}
