@@ -40,6 +40,19 @@ main {
   flex-direction: column;
 }
 
+.bg-blob {
+  height: 30rem;
+  width: 30rem;
+  background: radial-gradient(#64c6e6, #91e5be);
+  filter: blur(10rem);
+  position: absolute;
+  top: -15rem;
+  left: 10vw;
+  opacity: 0.5;
+  border-radius: 40% 2rem 1rem 50%;
+  transform: skew(40deg);
+}
+
 body {
   overflow-x: hidden;
 }
@@ -144,18 +157,18 @@ body::-webkit-scrollbar-thumb {
 }
 
 .h1-p {
-  margin-top: 10px;
+  margin: 20px 0 10px 0;
   color: gray;
+  opacity: 0.5;
 }
 
 .fords {
   width: 100%;
-  margin-left: 80px;
   display: flex;
   margin-top: 60px;
   align-items: start;
-  justify-content: flex-start;
-  text-align: left;
+  justify-content: center;
+  text-align: center;
 }
 
 .cards {
@@ -164,29 +177,37 @@ body::-webkit-scrollbar-thumb {
   flex-direction: row;
   align-items: center;
   gap: 16px;
+  margin-top: 50px;
   flex-wrap: wrap;
+  max-width: 1300px;
 }
 
 .card {
-  max-width: 300px;
-  height: 390px;
+  max-width: 270px;
+  height: 340px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: start;
+  justify-content: start;
   flex-direction: column;
-  border-radius: 7px;
-  background-color: rgb(23, 23, 23);
+  border-radius: 30px;
+  background-color: black;
   padding: 15px;
-  margin-top: 40px;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.209);
   border-top: 0.8px rgb(44, 44, 44) solid;
   border-left: 0.5px rgb(34, 34, 34) solid;
   transition: 0.4s;
-  margin-bottom: 40px;
+  margin: 40px 10px;
+  box-shadow: 0 0 1.25rem rgba(255, 255, 255, 0.2);
+  position: relative;
 }
 
 .card:hover {
   scale: 1.04;
+}
+
+.card-content {
+  padding: 10px;
+  margin-top: 10px;
 }
 
 .search {
@@ -195,7 +216,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .search-input {
-  background-color: #424242;
+  background-color: #42424274;
   color: white;
   font-size: 16px;
   padding: 10px 20px;
@@ -208,6 +229,17 @@ body::-webkit-scrollbar-thumb {
   cursor: pointer;
   transition: 0.3s;
   margin-top: 30px;
+}
+
+.search-input::placeholder {
+  font-size: 12px;
+  letter-spacing: 2px;
+  opacity: 0.5;
+}
+
+.search-input:hover {
+  background-color: #5959596d;
+  padding: 10px 30px;
 }
 
 .category-buttons {
@@ -226,6 +258,8 @@ body::-webkit-scrollbar-thumb {
   color: rgb(208, 208, 208);
   background-color: rgb(40, 40, 40);
   border-right: 0.1px gray solid;
+  opacity: 0.5;
+  font-size: 14px;
 }
 
 .showBMW {
@@ -240,18 +274,26 @@ body::-webkit-scrollbar-thumb {
   border-radius: 0 100px 100px 0;
   transition: 0.3s;
   border-left: none;
+  opacity: 0.5;
+  font-size: 14px;
 }
 
 .showBMW:hover {
+  opacity: 1;
   background-color: black;
 }
 .showMustang:hover {
+  opacity: 1;
   background-color: black;
 }
 
-.search-input:hover {
-  background-color: #595959;
-  padding: 10px 30px;
+.showBMW.active,
+.showMustang.active {
+  background: white;
+  color: black;
+  font-weight: bold;
+  letter-spacing: -0.1px;
+  opacity: 1 !important;
 }
 
 .search-icon {
@@ -260,29 +302,127 @@ body::-webkit-scrollbar-thumb {
 }
 
 .card-image {
-  max-width: 240px;
+  max-width: 300px;
+  margin-left: -15px;
+  margin-top: -80px;
+  filter: drop-shadow(0 1rem 1rem rgba(255, 255, 255, 0.05));
+  transition: 1.5s;
+}
+
+.card-image:hover {
+  scale: 1.08;
 }
 
 .card-name {
   margin-top: 8px;
-  font-size: 18px;
+  font-size: 17px;
+  letter-spacing: -0.1px;
+  text-align: start;
 }
 
 .card-description {
-  color: gray;
+  color: white;
+  opacity: 0.25;
   margin-top: 16px;
+  font-size: 14px;
+  text-align: start;
 }
 
 .card-delete {
   margin-top: 10px;
-  padding: 5px 15px;
+  padding: 10px 25px;
   border: none;
   font-size: 14px;
-  font-family: "poppins";
-  font-weight: 300;
-  background-color: rgb(53, 53, 53);
-  border-top: 0.1px rgb(112, 112, 112) solid;
+  font-family: "poppins", sans-serif;
+  background: black;
+  border: 1px solid rgba(255, 255, 255, 0.357);
   color: white;
   border-radius: 100px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  opacity: 1;
+  font-size: 12px;
+  letter-spacing: -0.1px;
+  transition: 0.2s;
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.card-delete:hover {
+  background: rgb(39, 39, 39);
+}
+
+.delete-text {
+  margin-left: 5px;
+}
+
+.sell {
+  display: flex;
+}
+
+.sell-content {
+  width: 90%;
+  height: 100%;
+  margin: 50px;
+  padding: 40px;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.379);
+  box-shadow: 0 0 2rem rgba(255, 255, 255, 0.2);
+}
+
+.sell-p {
+  color: gray;
+  margin-top: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: left;
+  justify-content: center;
+}
+
+.sell-input {
+  margin-top: 10px;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 15px;
+  background-color: rgb(75, 75, 75);
+  color: white;
+  font-family: "poppins";
+}
+
+.input-h3 {
+  margin: 25px 0 5px 5px;
+  font-size: 15px;
+  opacity: 0.7;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.sell-input::placeholder {
+  color: rgb(201, 201, 201);
+}
+
+.submit-button {
+  width: 200px;
+  border: none;
+  font-family: "poppins";
+  border: none;
+  border-radius: 100px;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
   cursor: pointer;
 }
