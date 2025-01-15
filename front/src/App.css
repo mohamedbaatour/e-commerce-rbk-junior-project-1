@@ -225,6 +225,7 @@ body::-webkit-scrollbar-thumb {
   border-radius: 100px 0 0 100px;
   color: rgb(208, 208, 208);
   background-color: rgb(40, 40, 40);
+  border-right: 0.1px gray solid;
 }
 
 .showBMW {
@@ -238,6 +239,7 @@ body::-webkit-scrollbar-thumb {
   cursor: pointer;
   border-radius: 0 100px 100px 0;
   transition: 0.3s;
+  border-left: none;
 }
 
 .showBMW:hover {
