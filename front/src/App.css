@@ -169,7 +169,7 @@ body::-webkit-scrollbar-thumb {
 
 .card {
   max-width: 300px;
-  height: 350px;
+  height: 390px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -210,6 +210,43 @@ body::-webkit-scrollbar-thumb {
   margin-top: 30px;
 }
 
+.category-buttons {
+  margin-top: 30px;
+}
+
+.showMustang {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: normal;
+  font-family: "poppins";
+  border: 0.3px rgb(159, 159, 159) solid;
+  transition: 0.3s;
+  cursor: pointer;
+  border-radius: 100px 0 0 100px;
+  color: rgb(208, 208, 208);
+  background-color: rgb(40, 40, 40);
+}
+
+.showBMW {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: normal;
+  font-family: "poppins";
+  border: 0.3px rgb(159, 159, 159) solid;
+  color: rgb(208, 208, 208);
+  background-color: rgb(40, 40, 40);
+  cursor: pointer;
+  border-radius: 0 100px 100px 0;
+  transition: 0.3s;
+}
+
+.showBMW:hover {
+  background-color: black;
+}
+.showMustang:hover {
+  background-color: black;
+}
+
 .search-input:hover {
   background-color: #595959;
   padding: 10px 30px;
@@ -238,8 +275,9 @@ body::-webkit-scrollbar-thumb {
   margin-top: 10px;
   padding: 5px 15px;
   border: none;
-  font-size: 15px;
-  font-weight: 500;
+  font-size: 14px;
+  font-family: "poppins";
+  font-weight: 300;
   background-color: rgb(53, 53, 53);
   border-top: 0.1px rgb(112, 112, 112) solid;
   color: white;
