@@ -11,10 +11,9 @@ module.exports = {
         }
     },
     postMustang: async (req, res) => {
-        console.log(req.body)
         try {
-            const {image , name, description } = req.body
-            const post = await mustang.create({image , name, description });
+            const { image, name, description, phone, price } = req.body;
+            const post = await mustang.create({image , name, description, phone, price });
             res.status(200).json(post)
         } catch (error) {
             throw error
@@ -23,8 +22,8 @@ module.exports = {
     updateMustang: async (req , res) => {
         try {
             const paramId = req.params.id
-            const { image, name, description } = req.body
-            const update = await mustang.update({ image, name, description }, { where: { id: paramId } })
+            const { image, name, description, phone, price } = req.body;
+            const update = await mustang.update({ image, name, description, phone, price }, { where: { id: paramId } })
             res.status(200).json(`updated Mustang with ID: ${update}`)
         } catch (error) {
             throw error

@@ -14,6 +14,14 @@ const bmwm = db.define("Bmwm", {
     type: DataTypes.STRING,
     allowNull: true,
   },
+  phone: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+  },
+  price: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+  },
 });
 
 module.exports = bmwm;
